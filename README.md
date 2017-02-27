@@ -3,11 +3,20 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: Constraint propogation techniques usually coincide with searching in order to solve a problem, or make it simpler to solve. The naked twins problem is 
+   solved by constraining each unit in the Sudoku, and searching through the boxes of that unit in order to find pairs of boxes that contain the same two 
+   values, hence the name 'naked twins'. The values of these two boxes are then eliminated from each of the other boxes that are within the same unit. This
+   is done because no other boxes can possibly contain any of the two values within the naked twins, because the solution to the naked twins can only be 
+   one value, or the other. I have implemented the naked_twins() method in the reduce_puzzle() method in order to, perhaps, solve the sudoku faster, or at
+   least make the Sudoku simpler to solve. This is also a constraint propogation technique in order to solve the entire Sudoku.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: The diagonal Sudoku problem takes the constraints of the main diagonals into consideration, so that the numbers 1-9 also appear in each diagonal only 
+   once. The boxes for each diagonal were grouped into 2 units, and these units were then added to the list of units, unitlist. This was all that needed 
+   to be done in order to solve the diagonal problem. The eliminate(), only_choice(), and naked_twins() methods would run the same way as they would when
+   solving a normal Sudoku. Since the diagonal units were added into unitlist, these methods still run through unitlist, units, and peers the same way.
+   The addition of the diagonal units is what adds a constraint on the Sudoku itself when finding a solution. 
 
 ### Install
 
